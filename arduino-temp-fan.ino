@@ -52,8 +52,10 @@ void setLedMode(int lPin){
 }
 
 void setFanSpeed(int pVal) {
-  analogWrite(P_OUT_PIN, 255);
-  delay(500);
+  if(pVal > 0) {
+    analogWrite(P_OUT_PIN, 255);
+    delay(500);
+  }
   analogWrite(P_OUT_PIN, pVal);
 }
 
